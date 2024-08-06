@@ -105,4 +105,4 @@ Simplicity Studio display a new view, the **Project Explorer** view:
 
 In the Project Explorer View, right-click the name of the project (`empty`) and select **Build Project**.
 
-Once the build is finished, right-click again `empty` and select **Run As > 1 Silicon Labs ARM Program**. The blue LED near the USB connector should blink for a short period of time.
+Once the build is finished, right-click `empty` again and select **Run As > 1 Silicon Labs ARM Program**. The blue LED near the USB connector should blink for a short period of time.
