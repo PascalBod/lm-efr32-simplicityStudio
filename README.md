@@ -69,6 +69,17 @@ Follow the instructions provided [here](https://docs.silabs.com/simplicity-studi
 * Accept all the licenses.
 * At some point, Simplicity Studio needs to install a package: it asks for your password. Provide it.
 
+## Launcher
+
+Simplicity Studio can be started by running `~/SimplicityStudio_v5/studio`.
+
+It's also possible to create a launcher, so that you can start it from the main menu:
+* Right-click the Main Menu icon and select **Edit Applications**
+* In the newly-opened **MenuLibre** window, click the **+** tool and select **Add Launcher**
+* In the properties window of the new launcher, click the **New Launcher** string and replace it by `Simplicity Studio v5`. Delete the description just below. For the command, select `developer/SimplicityStudio_v5/studio`. Click the icon , select **Browse Files...*, and select `developer/SimplicityStudio_v5/icon.xpm`
+* Ensure that the **Categories** view is active, and click the **+** button below it. Click the newly-created **Select a category** line and select **Development > Development**
+* Click the **Save Launcher** tool and close the **MenuLibre** window
+
 # EFR32xG24 Dev Kit connection
 
 Connect the board to a USB port of the computer.
