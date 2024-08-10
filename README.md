@@ -27,7 +27,7 @@ We consider that the home directory is named `developer`.
 
 The first step is to create the Linux VM. For this, check [this guide](https://github.com/PascalBod/lm-vm), *xfce21.3* tag.
 
-# VM configuration
+# Development environment setup
 
 ## Reference documents
 
@@ -74,19 +74,17 @@ Follow the instructions provided [here](https://docs.silabs.com/simplicity-studi
 Simplicity Studio can be started by running `~/SimplicityStudio_v5/studio`.
 
 It's also possible to create a launcher, so that you can start it from the main menu:
-* Right-click the Main Menu icon and select **Edit Applications**
-* In the newly-opened **MenuLibre** window, click the **+** tool and select **Add Launcher**
-* In the properties window of the new launcher, click the **New Launcher** string and replace it by `Simplicity Studio v5`. Delete the description just below. For the command, select `developer/SimplicityStudio_v5/studio`. Click the icon , select **Browse Files...*, and select `developer/SimplicityStudio_v5/icon.xpm`
-* Ensure that the **Categories** view is active, and click the **+** button below it. Click the newly-created **Select a category** line and select **Development > Development**
-* Click the **Save Launcher** tool and close the **MenuLibre** window
+1. Right-click the Main Menu icon and select **Edit Applications**
+2. In the newly-opened **MenuLibre** window, click the **+** tool and select **Add Launcher**
+3. In the properties window of the new launcher, click the **New Launcher** string and replace it by `Simplicity Studio v5`. Delete the description just below. For the command, select `developer/SimplicityStudio_v5/studio`. Click the icon , select **Browse Files...*, and select `developer/SimplicityStudio_v5/icon.xpm`
+4. Ensure that the **Categories** view is active, and click the **+** button below it. Click the newly-created **Select a category** line and select **Development > Development**
+5. Click the **Save Launcher** tool and close the **MenuLibre** window
 
 # EFR32xG24 Dev Kit connection
 
-Connect the board to a USB port of the computer.
-
-Check that the virtual machine can see it, with **Devices > USB** (in the VirtualBox window menu). A new USB device should be visible: **Silicon Labs J-Link OB**. Tick the associated checkbox.
-
-You can assign the board to the virtual machine on a permanent basis with **Devices > USB > USB Settings...**.
+1. Connect the board to a USB port of the computer.
+2. Check that the virtual machine can see it, with **Devices > USB** (in the VirtualBox window menu). A new USB device should be visible: **Silicon Labs J-Link OB**. Tick the associated checkbox.
+3. You can assign the board to the virtual machine on a permanent basis with **Devices > USB > USB Settings...**.
 
 The board should appear in the *Debug Adapters* view of Simplicity Studio:
 
@@ -96,24 +94,17 @@ and the blue LED near the USB connector should be on.
 
 # Sample application
 
-Click **File > New > Silicon Labs Project Wizard...**.
-
-In the wizard window, type `Dev Kit` in the **Target Boards** filed and then select the board reference corresponding to the mark printed on the bottom side of the board you have. Mine is marked `BRD2601B Rev A01`. Consequently, I select **EFR32xG24 DevKit Board (BRD2601B Rev A01)**.
-
-Select **Simplicity SDK Suite v2024.6.1...** for the **SDK** field.
-
-Select **Simplicity IDE / GNU ARM v12.2.1** for the **IDE / Toolchain** field.
-
-Click the **NEXT** button.
-
-In the Example Project Selection, click the **Empty C Project** rectangle. Click the **NEXT** button.
-
-In the Project Configuration window, choose a project name, or keep the proposed one (`empty`). Keep the other default values. Click the **FINISH** button.
+1. Click **File > New > Silicon Labs Project Wizard...**.
+2. In the wizard window, type `Dev Kit` in the **Target Boards** filed and then select the board reference corresponding to the mark printed on the bottom side of the board you have. Mine is marked `BRD2601B Rev A01`. Consequently, I select **EFR32xG24 DevKit Board (BRD2601B Rev A01)**.
+3. Select **Simplicity SDK Suite v2024.6.1...** for the **SDK** field.
+4. Select **Simplicity IDE / GNU ARM v12.2.1** for the **IDE / Toolchain** field.
+5. Click the **NEXT** button.
+6. In the Example Project Selection, click the **Empty C Project** rectangle. Click the **NEXT** button.
+7. In the Project Configuration window, choose a project name, or keep the proposed one (`empty`). Keep the other default values. Click the **FINISH** button.
 
 Simplicity Studio display a new view, the **Project Explorer** view:
 
 ![](images/project_explorer_view.png)
 
-In the Project Explorer View, right-click the name of the project (`empty`) and select **Build Project**.
-
-Once the build is finished, right-click `empty` again and select **Run As > 1 Silicon Labs ARM Program**. The blue LED near the USB connector should blink for a short period of time.
+8. In the Project Explorer View, right-click the name of the project (`empty`) and select **Build Project**.
+9. Once the build is finished, right-click `empty` again and select **Run As > 1 Silicon Labs ARM Program**. The blue LED near the USB connector should blink for a short period of time.
