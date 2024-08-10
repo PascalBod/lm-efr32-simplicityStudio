@@ -95,7 +95,7 @@ and the blue LED near the USB connector should be on.
 # Sample application
 
 1. Click **File > New > Silicon Labs Project Wizard...**.
-2. In the wizard window, type `Dev Kit` in the **Target Boards** filed and then select the board reference corresponding to the mark printed on the bottom side of the board you have. Mine is marked `BRD2601B Rev A01`. Consequently, I select **EFR32xG24 DevKit Board (BRD2601B Rev A01)**.
+2. In the wizard window, type `Dev Kit` in the **Target Boards** field and then select the board reference corresponding to the mark printed on the bottom side of the board you have. Mine is marked `BRD2601B Rev A01`. Consequently, I select **EFR32xG24 DevKit Board (BRD2601B Rev A01)**.
 3. Select **Simplicity SDK Suite v2024.6.1...** for the **SDK** field.
 4. Select **Simplicity IDE / GNU ARM v12.2.1** for the **IDE / Toolchain** field.
 5. Click the **NEXT** button.
