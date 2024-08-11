@@ -15,10 +15,10 @@ Versions are:
 * Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A port
 * Hardware (bis): an [EFR32xG24 Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview) with the provided USB micro-B cable to connect it to the computer. Other EFR32 boards may be used as well, but only the EF32xG24 is considered in this tutorial
 * Software development competencies:
-  * Basic knowledge of *git*
-  * Basic knowledge of *GitHub*
-  * Basic knowledge of *Linux* (knowing the most common commands...)
-  * Basic knowledge of *VirtualBox* (knowing how to create a virtual machine...)
+  * Basic knowledge of *git* - [git usermanual](https://git-scm.com/docs/user-manual)
+  * Basic knowledge of *GitHub* - [About GitHub and Git](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git)
+  * Basic knowledge of *Linux* (knowing the most common commands...) - [An Introduction to Linux Basics, from Digital Ocean](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics)
+  * Basic knowledge of *VirtualBox* (knowing how to create a virtual machine...) - [End-user documentation](https://www.virtualbox.org/wiki/End-user_documentation)
   * Good knowledge of one programming language
 
 We consider that the home directory is named `developer`.
