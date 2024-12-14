@@ -8,7 +8,7 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 
 Versions are:
 * Linux Mint Xfce: 21.3
-* Simplicity Studio: 5.9.2
+* Simplicity Studio: 5.9.3.3
 
 # Prerequisites
 
