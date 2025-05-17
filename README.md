@@ -1,18 +1,14 @@
-### Table of contents
-
-Click on the ![](images/tocIcon.png) icon, on the right-hand side above.
-
 # Overview
 
 This short tutorial describes a way to make a virtual machine (VM) configured for developing software for an EFR32 target with Simplicity Studio. It also explains how to start using it. The virtualization environment is *VirtualBox*, and the guest machine runs *Linux Mint*.
 
 Versions are:
-* Linux Mint Xfce: 21.3
-* Simplicity Studio: 5.9.3.3
+* Linux Mint Cinnamon 22.1
+* Simplicity Studio 5.10.3
 
 # Prerequisites
 
-* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB, with a few tens of GB available on the disk, and one free USB A port
+* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB at least, with a few tens of GB available on the disk, and one free USB A port
 * Hardware (bis): an [EFR32xG24 Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview) with the provided USB micro-B cable to connect it to the computer. Other EFR32 boards may be used as well, but only the EF32xG24 is considered in this tutorial
 * Software development competencies:
   * Basic knowledge of *git* - [git user manual](https://git-scm.com/docs/user-manual)
@@ -25,7 +21,7 @@ We consider that the home directory is named `developer`.
 
 # Creation of the VM
 
-The first step is to create the Linux VM. For this, check [this guide](https://github.com/PascalBod/lm-vm), *xfce21.3* tag.
+The first step is to create the Linux VM. For this, check [this guide](https://github.com/PascalBod/lm-vm).
 
 # Development environment setup
 
@@ -61,7 +57,10 @@ The resulting directory tree should look like:
 
 ![](images/linux_installer_directory_tree.png)
 
-Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.9.1/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
+Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.10.3/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
+
+Problem: Simplicity Studio requires libncurses5, which is no more part of Linux Mint. Latest version containing it: 21.3.
+
 * Run the `setup.sh` script, not the `studiowayland.sh` one.
 * When the script ends, run the `studio` executable which is in the `developer/SimplicityStudio_v5` directory, either from a terminal window or from the File Manager. Accept the licenses. Login with your Silicon Labs account.
 * In the Installation Manager window, select *Install by technology type*. In the next window, tick *32-bit and Wireless MCUs*. You can then untick *Silicon Labs Amazon Sidewalk SDK*.
