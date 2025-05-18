@@ -59,7 +59,7 @@ The resulting directory tree should look like:
 
 Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.10.3/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
 
-Problem: Simplicity Studio requires libncurses5, which is no more part of Linux Mint. Latest version containing it: 21.3. Installing libncurses5 from an Ubuntu Focal repository led to another dependency problem:
+Problem: Simplicity Studio requires libncurses5, which is no more part of Linux Mint. Latest version containing it: 21.3. [Installing libncurses5 from an Ubuntu Focal repository](https://www.aentsol.com/microcontrollers-ubuntu-stm32cubeide-install-libncurses5-ubuntu-24-04/) led to another dependency problem:
 
 ```
 The following packages have unmet dependencies:
