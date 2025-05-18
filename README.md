@@ -59,7 +59,13 @@ The resulting directory tree should look like:
 
 Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.10.3/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
 
-Problem: Simplicity Studio requires libncurses5, which is no more part of Linux Mint. Latest version containing it: 21.3.
+Problem: Simplicity Studio requires libncurses5, which is no more part of Linux Mint. Latest version containing it: 21.3. Installing libncurses5 from an Ubuntu Focal repository led to another dependency problem:
+
+```
+The following packages have unmet dependencies:
+ libqt5core5t64 : Breaks: libqt5core5a (< 5.15.13+dfsg-1ubuntu1)
+```
+
 
 * Run the `setup.sh` script, not the `studiowayland.sh` one.
 * When the script ends, run the `studio` executable which is in the `developer/SimplicityStudio_v5` directory, either from a terminal window or from the File Manager. Accept the licenses. Login with your Silicon Labs account.
