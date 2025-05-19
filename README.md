@@ -21,7 +21,7 @@ We consider that the home directory is named `developer`.
 
 # Creation of the VM
 
-The first step is to create the Linux VM. For this, check [this guide](https://github.com/PascalBod/lm-vm). Follow the guidelines provided by the `cinnamon21.3` branch.
+The first step is to create the Linux VM. For this, adhere to [this guide](https://github.com/PascalBod/lm-vm/tree/cinnamon21.3).
 
 > [!IMPORTANT]
 > Simplicity Studio has a dependency on libncurses5. This package is no more part of the lastest versions of Ubuntu and Linux Mint. That's why you must use Linux Mint 21.3, the latest version providing libncurses5.
