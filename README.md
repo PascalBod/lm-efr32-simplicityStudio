@@ -5,6 +5,7 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 Versions are:
 * Linux Mint Cinnamon 21.3
 * Simplicity Studio 5.10.3
+* Simplicity SDK Suite v2024.12.2
 
 # Prerequisites
 
