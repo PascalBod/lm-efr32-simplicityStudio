@@ -4,7 +4,7 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 
 Versions are:
 * Linux Mint Cinnamon 21.3
-* Simplicity Studio 5.10.3
+* Simplicity Studio 5.11.2
 * Simplicity SDK Suite v2024.12.2
 
 # Prerequisites
@@ -25,13 +25,13 @@ We consider that the home directory is named `developer`.
 The first step is to create the Linux VM. For this, adhere to [this guide](https://github.com/PascalBod/lm-vm/tree/cinnamon21.3).
 
 > [!IMPORTANT]
-> Simplicity Studio has a dependency on libncurses5. This package is no more part of the latest versions of Ubuntu and Linux Mint. That's why you must use Linux Mint 21.3, the latest version providing libncurses5.
+> Simplicity Studio 5 has a dependency on libncurses5. This package is no more part of the latest versions of Ubuntu and Linux Mint. That's why you must use Linux Mint 21.3, the latest version providing libncurses5.
 
 # Development environment setup
 
 ## Reference documents
 
-* [Simplicity Studio User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/5.9.1/ss-5-users-guide-overview/)
+* [Simplicity Studio User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/5.11.2/ss-5-users-guide-overview/)
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ Create an account on the [Silicon Labs website](https://docs.silabs.com), by cli
 
 ## Installation of Simplicity Studio
 
-Download the Linux Installer from [this page](https://www.silabs.com/developers/simplicity-studio).
+Download the Linux Installer from [this page](https://www.silabs.com/software-and-tools/simplicity-studio/simplicity-studio-version-5).
 
 To check the integrity of the downloaded file (`SimplicityStudio-5.tgz`), download the Linux SHA256 file, provided by the same page. Open a terminal window, go into the directory where the Linux Installer and the SHA256 files are, and enter the following command:
 ```
@@ -62,11 +62,11 @@ The resulting directory tree should look like:
 
 ![](images/linux_installer_directory_tree.png)
 
-Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.10.3/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
+Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.11.2/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
 
 * No need to use `studiowayland.sh` script
 * When the script ends, run the `studio` executable which is in the `developer/SimplicityStudio_v5` directory, either from a terminal window or from the File Manager. Accept the licenses. Login with your Silicon Labs account.
-* In the Installation Manager window, select **Install by technology type**. In the next window, tick **32-bit and Wireless MCUs**. You can then untick **Silicon Labs Amazon Sidewalk SDK**.
+* In the Installation Manager window, select **Install by technology type**. In the next window, tick **32-bit and Wireless MCUs**. You can then untick **Silicon Labs Amazon Sidewalk SDK**, **Silicon Labs Matter** and **WiSeConnect**
 * In the Package Installation Options window, keep the default choice, **Auto**
 * Accept all the licenses.
 * At some point, Simplicity Studio needs to install a package: it asks for your password. Provide it.
