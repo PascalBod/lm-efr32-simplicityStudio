@@ -5,7 +5,7 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 Versions are:
 * Linux Mint Cinnamon 21.3
 * Simplicity Studio 5.11.2
-* Simplicity SDK Suite v2024.12.2
+* Simplicity SDK Suite v2025.6.2
 
 # Prerequisites
 
@@ -96,7 +96,7 @@ and the blue LED near the USB connector should be on.
 
 1. Click **File > New > Silicon Labs Project Wizard...**.
 2. In the wizard window, type `Dev Kit` in the **Target Boards** field and then select the board reference corresponding to the mark printed on the bottom side of the board you have. Mine is marked `BRD2601B Rev A01`. Consequently, I select **EFR32xG24 DevKit Board (BRD2601B Rev A01)**.
-3. Select **Simplicity SDK Suite v2024.12.2...** for the **SDK** field.
+3. Select **Simplicity SDK Suite v2025.6.2...** for the **SDK** field.
 4. Select **Simplicity IDE / GNU ARM v12.2.1** for the **IDE / Toolchain** field.
 5. Click the **NEXT** button.
 6. In the Example Project Selection, click the **Empty C Project** rectangle. Click the **NEXT** button.
