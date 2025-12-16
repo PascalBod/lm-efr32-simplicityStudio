@@ -7,9 +7,12 @@ Versions are:
 * Simplicity Studio 5.11.2
 * Simplicity SDK Suite v2025.6.2
 
+> [!Important]
+> When installing various required software, ensure that you use the correct version numbers. This is important, as some of them are not compatible with others.
+
 # Prerequisites
 
-* Hardware: a 64-bit computer with enough memory so that the VM can be granted 4 GB at least, with a few tens of GB available on the disk, and one free USB A port
+* Hardware: a 64-bit computer with enough memory so that the VM can be granted 8 GB at least, with a few tens of GB available on the disk, and one free USB A port
 * Hardware (bis): an [EFR32xG24 Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview) with the provided USB micro-B cable to connect it to the computer. Other EFR32 boards may be used as well, but only the EF32xG24 is considered in this tutorial
 * Software development competencies:
   * Basic knowledge of Git - [git user manual](https://git-scm.com/docs/user-manual)
@@ -25,17 +28,13 @@ We consider that the home directory is named `developer`.
 The first step is to create the Linux VM. For this, adhere to [this guide](https://github.com/PascalBod/lm-vm/tree/cinnamon21.3).
 
 > [!IMPORTANT]
-> Simplicity Studio 5 has a dependency on libncurses5. This package is no more part of the latest versions of Ubuntu and Linux Mint. That's why you must use Linux Mint 21.3, the latest version providing libncurses5.
+> Simplicity Studio 5 has a dependency on libncurses5. This package is no more part of the latest versions of Linux Mint. That's why you must use Linux Mint 21.3, the latest version providing libncurses5.
 
 # Development environment setup
 
-## Reference documents
+## Reference document
 
 * [Simplicity Studio User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/5.11.2/ss-5-users-guide-overview/)
-
-## Prerequisites
-
-Create an account on the [Silicon Labs website](https://docs.silabs.com), by clicking on the login icon in the top right-hand corner, and selecting **Register**. An account is required for downloading Simplicity Studio.
 
 ## Installation of Simplicity Studio
 
@@ -64,8 +63,8 @@ The resulting directory tree should look like:
 
 Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.11.2/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
 
-* No need to use `studiowayland.sh` script
-* When the script ends, run the `studio` executable which is in the `developer/SimplicityStudio_v5` directory, either from a terminal window or from the File Manager. Accept the licenses. Login with your Silicon Labs account.
+* No need to run the `studiowayland.sh` script
+* When the `setup.sh` script ends, run the `studio` executable which is in the `developer/SimplicityStudio_v5` directory, either from a terminal window or from the File Manager. Accept the licenses. Login with your Silicon Labs account.
 * In the Installation Manager window, select **Install by technology type**. In the next window, tick **32-bit and Wireless MCUs**. You can then untick **Silicon Labs Amazon Sidewalk SDK**, **Silicon Labs Matter** and **WiSeConnect**
 * In the Package Installation Options window, keep the default choice, **Auto**
 * Accept all the licenses.
@@ -108,3 +107,5 @@ Simplicity Studio display a new view, the **Project Explorer** view:
 
 8. In the Project Explorer View, right-click the name of the project (`empty`) and select **Build Project**.
 9. Once the build is finished, right-click `empty` again and select **Run As > 1 Silicon Labs ARM Program**. The blue LED near the USB connector should blink for a short period of time.
+
+You can then try the **Platform - Blink Bare-metal** sample application, whick makes blink the board's LED.
