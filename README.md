@@ -55,9 +55,6 @@ Move the file into the `/home/developer/.local/share/applications` directory.
 > [!Note]
 > If you use *Caja*, the standard file manager, request to display hidden files: **View / Show Hidden Files**. You can also set the related preference: **Edit / Preferences / Views / Show hidden files**.
 
-
-**TODO**: check whether [recipe](https://docs.silabs.com/ssv6ug/latest/ssv6-import-and-export-recipes/) could be a good way to ensure common versions.
-
 ## Installation of Visual Studio Code
 
 Once Simplicity Studio is installed, install Visual Studio Code (VS Code): download the `.deb` package from [this page](https://code.visualstudio.com/download) and install it. At the time of writing, the version is v1.126.0.
