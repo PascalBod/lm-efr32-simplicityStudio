@@ -36,10 +36,7 @@ Install the Linux Simplicity Studio Installer in the VM according to [these inst
 
 Then, continue by adhering to [Simplicity Studio Installation Steps Common to All Operating Systems](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#simplicity-studio-installation-steps-common-to-all-operating-systems), selecting the *Technology Install* track. Add **AI / ML** to the list of 7 preselected elements.
 
-The installation creates a desktop shortcut, named `Simplicity Studio.desktop`. Move it into the `/home/developer/.local/share/applications` directory.
-
-> [!Note]
-> If you use *Caja*, the standard file manager, request to display hidden files: **View / Show Hidden Files**. You can also set the related preference: **Edit / Preferences / Views / Show hidden files**.
+The installation creates a desktop shortcut, named `Simplicity Studio.desktop`. 
 
 Add the following two lines to the file:
 ```
@@ -53,6 +50,10 @@ Icon=/home/developer/.silabs/slt/installs/archive/v6-base-v6.2.0-282/SimplicityS
 > [!Note]
 > For the icon file path, use the value of the `Path` variable defined in the desktop shortcut file.
 
+Move the file into the `/home/developer/.local/share/applications` directory.
+
+> [!Note]
+> If you use *Caja*, the standard file manager, request to display hidden files: **View / Show Hidden Files**. You can also set the related preference: **Edit / Preferences / Views / Show hidden files**.
 
 
 **TODO**: check whether [recipe](https://docs.silabs.com/ssv6ug/latest/ssv6-import-and-export-recipes/) could be a good way to ensure common versions.
