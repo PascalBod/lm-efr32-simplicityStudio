@@ -3,12 +3,9 @@
 This short tutorial describes a way to make a virtual machine (VM) configured for developing software for an EFR32 target with Simplicity Studio. It also explains how to start using it. The virtualization environment is VirtualBox, and the guest machine runs Linux Mint.
 
 Versions are:
-* Linux Mint Cinnamon 21.3
-* Simplicity Studio 5.11.2
-* Simplicity SDK Suite v2025.6.2
-
-> [!Important]
-> When installing various required software, ensure that you use the correct version numbers. This is important, as some of them are not compatible with others.
+* Linux Mint 22.3 MATE
+* Simplicity Studio 6.1
+* Simplicity SDK Suite vnnnn.n.n
 
 # Prerequisites
 
@@ -21,63 +18,54 @@ Versions are:
   * Basic knowledge of VirtualBox (knowing how to create a virtual machine...) - [End-user documentation](https://www.virtualbox.org/wiki/End-user_documentation)
   * Good knowledge of one programming language
 
-We consider that the home directory is named `developer`.
+We consider that the VM user is *developer* and that the home directory is `developer`.
 
 # Creation of the VM
 
-The first step is to create the Linux VM. For this, adhere to [this guide](https://github.com/PascalBod/lm-vm/tree/cinnamon21.3). Make sure that the *cinnamon21.3* branch is selected.
-
-> [!IMPORTANT]
-> Simplicity Studio 5 has a dependency on libncurses5. This package is no more part of the latest versions of Linux Mint. That's why you must use Linux Mint 21.3, the latest version providing libncurses5.
+The first step is to create the Linux VM. For this, adhere to [this guide](https://github.com/PascalBod/lm-vm/tree/mate22.3). Make sure that the *mate22.3* branch is selected.
 
 # Development environment setup
 
 ## Reference document
 
-* [Simplicity Studio User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/5.11.2/ss-5-users-guide-overview/)
+* [Simplicity Studio 6 User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/)
 
 ## Installation of Simplicity Studio
 
-Download the Linux Installer from [this page](https://www.silabs.com/software-and-tools/simplicity-studio/simplicity-studio-version-5).
+Install the Linux Simplicity Studio Installer in the VM according to [these instructions](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#linux-installation). At the time of writing, the Installer version is v1.2.0.
 
-To check the integrity of the downloaded file (`SimplicityStudio-5.tgz`), download the Linux SHA256 file, provided by the same page. Open a terminal window, go into the directory where the Linux Installer and the SHA256 files are, and enter the following command:
+Then, continue by adhering to [Simplicity Studio Installation Steps Common to All Operating Systems](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#simplicity-studio-installation-steps-common-to-all-operating-systems), selecting the *Technology Install* track. Add **AI / ML** to the list of 7 preselected elements.
+
+The installation creates a desktop shortcut, named `Simplicity Studio.desktop`. Move it into the `/home/developer/.local/share/applications` directory.
+
+> [!Note]
+> If you use *Caja*, the standard file manager, request to display hidden files: **View / Show Hidden Files**. You can also set the related preference: **Edit / Preferences / Views / Show hidden files**.
+
+Add the following two lines to the file:
 ```
-$ sha256sum -c SimplicityStudio-5.tgz.sha256 
+Categories=Development;Programming;
+Icon=/home/developer/.silabs/slt/installs/archive/v6-base-v6.2.0-282/SimplicityStudio-6/icon.xpm
 ```
 
-The resulting output should be:
-```
-./SimplicityStudio-5.tgz: OK
-```
+> [!Note]
+> You can add the lines with the **Accessories / Text Editor** application.
 
-If this is not the case, download again the Linux Installer.
+> [!Note]
+> For the icon file path, use the value of the `Path` variable defined in the desktop shortcut file.
 
-> [!NOTE]
-> If you used Firefox to download the Linux Installer, the file should be in the `developer/Downloads` subdirectory.
 
-Extract the contents of the Linux Installer file into the `developer` directory. One way to do it is to start the File Manager, display the contents of the `Downloads` directory, and double-click on the `SimplicityStudio-5.tgz` file. Then select the `developer` directory as the target of the extraction operation.
 
-The resulting directory tree should look like:
+**TODO**: check whether [recipe](https://docs.silabs.com/ssv6ug/latest/ssv6-import-and-export-recipes/) could be a good way to ensure common versions.
 
-![](images/linux_installer_directory_tree.png)
+## Installation of Visual Studio Code
 
-Follow the instructions provided [here](https://docs.silabs.com/simplicity-studio-5-users-guide/5.11.2/ss-5-users-guide-getting-started/install-ss-5-and-software#on-linux). Some additional information:
+Once Simplicity Studio is installed, install Visual Studio Code (VS Code): download the `.deb` package from [this page](https://code.visualstudio.com/download) and install it. At the time of writing, the version is v1.126.0.
 
-* No need to run the `studiowayland.sh` script
-* When the `setup.sh` script ends, run the `studio` executable which is in the `developer/SimplicityStudio_v5` directory, either from a terminal window or from the File Manager. Accept the licenses. Login with your Silicon Labs account.
-* In the Installation Manager window, select **Install by technology type**. In the next window, tick **32-bit and Wireless MCUs**. You can then untick **Silicon Labs Amazon Sidewalk SDK**, **Silicon Labs Matter** and **WiSeConnect**
-* In the Package Installation Options window, keep the default choice, **Auto**
-* Accept all the licenses.
-* At some point, Simplicity Studio needs to install a package: it asks for your password. Provide it.
+Start VS Code (from Mint menu). Do not sign in and close the *Build with AI Agents* window.
 
-## Launcher
+Install the Simplicity Studio VS Code Extension, according to [these instructions](https://docs.silabs.com/ss-vscode/latest/ss-vscode-getting-started-overview/#install-the-simplicity-studio-vs-code-extension).
 
-Simplicity Studio can be started by running `~/SimplicityStudio_v5/studio`.
 
-It's also possible to create a launcher, so that you can start it from the main menu:
-1. Right-click the Main Menu icon and select **Edit menu**
-2. In the newly-opened **Main Menu** window, click the **Programming** category and then the **New Item** button
-3. In the Launcher Properties window, set **Name** to `Simplicity Studio v5`. Click the **Browse** button and select `developer/SimplicityStudio_v5/studio` for **Command**. You can set **Comment** to `Simplicity Studio v5`. Click the rocket icon, and select `developer/SimplicityStudio_v5/icon.xpm`
 
 # EFR32xG24 Dev Kit connection
 
