@@ -1,6 +1,6 @@
 # Overview
 
-This short tutorial describes a way to make a virtual machine (VM) configured for developing software for an EFR32 target with Simplicity Studio. It also explains how to start using it. The virtualization environment is VirtualBox, and the guest machine runs Linux Mint.
+This short tutorial describes a way to make a virtual machine (VM) configured for developing software for an EFR32 target with Simplicity Studio 6. It also explains how to start using it. The virtualization environment is VirtualBox, and the guest machine runs Linux Mint.
 
 Versions are:
 * Linux Mint 22.3 MATE
@@ -26,13 +26,12 @@ The first step is to create the Linux VM. For this, adhere to [this guide](https
 
 # Development environment setup
 
-## Reference document
-
-* [Simplicity Studio 6 User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/)
-
 ## Installation of Simplicity Studio
 
 Install the Linux Simplicity Studio Installer in the VM according to [these instructions](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#linux-installation). At the time of writing, the Installer version is v1.2.0.
+
+> [!Note]
+> The Installer can be downloaded from the [*GETTING STARTED* tab](https://www.silabs.com/software-and-tools/simplicity-studio?tab=getting-started).
 
 Then, continue by adhering to [Simplicity Studio Installation Steps Common to All Operating Systems](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#simplicity-studio-installation-steps-common-to-all-operating-systems), selecting the *Technology Install* track. Add **AI / ML** to the list of 7 preselected elements.
 
@@ -55,18 +54,24 @@ Move the file into the `/home/developer/.local/share/applications` directory.
 > [!Note]
 > If you use *Caja*, the standard file manager, request to display hidden files: **View > Show Hidden Files**. You can also set the related preference: **Edit > Preferences > Views > Show hidden files**.
 
+You can close the Simplicity Installer window.
+
 ## Installation of Visual Studio Code
 
-Once Simplicity Studio is installed, install Visual Studio Code (VS Code): download the `.deb` package from [this page](https://code.visualstudio.com/download) and install it. At the time of writing, the version is v1.126.0.
+Once Simplicity Studio is installed, install Visual Studio Code (VS Code): download the `.deb` package from [this page](https://code.visualstudio.com/download) and install it. At the time of writing, the version is v1.127.0.
 
-Start VS Code (from Mint menu). Do not sign in and close the *Build with AI Agents* window.
+Start VS Code (from Mint menu: **Programming > Visual Studio Code**). Close the **Welcome to VS Code** window. Close the **CHAT** side bar.
 
-Install the Simplicity Studio VS Code Extension, according to [these instructions](https://docs.silabs.com/ss-vscode/latest/ss-vscode-getting-started-overview/#install-the-simplicity-studio-vs-code-extension).
+Install the Simplicity Studio VS Code Extension, according to [these instructions](https://docs.silabs.com/ss-vscode/latest/ss-vscode-getting-started-overview/#install-the-simplicity-studio-vs-code-extension). The extension version is 2.1.86 at the time of writing.
+
+When requested for restarting, restart.
+
+With the Software Manager (in main menu), install *clangd*.
 
 # EFR32xG24 Dev Kit connection
 
 Install the SEGGER J-Link package:
-1. Download it from [SEGGER website](https://www.segger.com/downloads/jlink/) - select the Linux 64-bit DEB Installer.
+1. Download it from [SEGGER website](https://www.segger.com/downloads/jlink/) - select the Linux 64-bit DEB Installer. At the time of writing, the version is V9.56.
 2. Install the package (double click on it from the window manager).
 
 Connect the board to the VM:
@@ -92,21 +97,20 @@ Create a project for building a sample application which makes the red LED blink
 5. Click the **CREATE** button of the **Platform - Blink Bare-metal** example.
 6. In the **Project Configuration** window, keep the default values, and click the **FINISH** button.
 
+## Building the application
 
+Click the **Open in VS Code** button.
 
-1. Click **File > New > Silicon Labs Project Wizard...**.
-2. In the wizard window, type `Dev Kit` in the **Target Boards** field and then select the board reference corresponding to the mark printed on the bottom side of the board you have. Mine is marked `BRD2601B Rev A01`. Consequently, I select **EFR32xG24 DevKit Board (BRD2601B Rev A01)**.
-3. Select **Simplicity SDK Suite v2025.6.2...** for the **SDK** field.
-4. Select **Simplicity IDE / GNU ARM v12.2.1** for the **IDE / Toolchain** field.
-5. Click the **NEXT** button.
-6. In the Example Project Selection, click the **Empty C Project** rectangle. Click the **NEXT** button.
-7. In the Project Configuration window, choose a project name, or keep the proposed one (`empty`). Keep the other default values. Click the **FINISH** button.
+In VS Code window, accept to trust the authors of the files. Then, close VS Code and restart it. This will create a workspace, required to build and flash the application.
 
-Simplicity Studio display a new view, the **Project Explorer** view:
+Click the **blink_baremetal** project under the untitled workspace:
 
-![](images/project_explorer_view.png)
+![](images/blink_baremetal_project.png)
 
-8. In the Project Explorer View, right-click the name of the project (`empty`) and select **Build Project**.
-9. Once the build is finished, right-click `empty` again and select **Run As > 1 Silicon Labs ARM Program**. The blue LED near the USB connector should blink for a short period of time.
+Click the hammer icon, on the right side of the project name. This action builds the application (firmware).
 
-You can then try the **Platform - Blink Bare-metal** sample application, whick makes blink the board's LED.
+Then, click the chip icon, and select the `blink_baremetal.s37` file :
+
+![](images/firmware_file.png)
+
+The red LED should start blinking.
