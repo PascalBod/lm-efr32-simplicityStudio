@@ -83,7 +83,7 @@ Start Simplicity Studio (main menu: **Programming > Simplicity Studio**). The bo
 
 ![](images/connectedBoard.png)
 
-The blue LED near the USB connector should be flashing.
+The blue LED near the USB connector should be on.
 
 # Sample application
 
@@ -113,4 +113,6 @@ Then, click the chip icon, and select the `blink_baremetal.s37` file :
 
 ![](images/firmware_file.png)
 
-The red LED should start blinking.
+This action flashes the board with the firmware.
+
+Once done, the red LED should start blinking.
