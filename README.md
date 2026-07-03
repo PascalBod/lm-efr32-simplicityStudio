@@ -5,7 +5,7 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 Versions are:
 * Linux Mint 22.3 MATE
 * Simplicity Studio 6.1
-* Simplicity SDK Suite vnnnn.n.n
+* Simplicity SDK Suite v2026.6.0
 
 # Prerequisites
 
@@ -45,7 +45,7 @@ Icon=/home/developer/.silabs/slt/installs/archive/v6-base-v6.2.0-282/SimplicityS
 ```
 
 > [!Note]
-> You can add the lines with the **Accessories / Text Editor** application.
+> You can add the lines with the **Accessories > Text Editor** application.
 
 > [!Note]
 > For the icon file path, use the value of the `Path` variable defined in the desktop shortcut file.
@@ -53,7 +53,7 @@ Icon=/home/developer/.silabs/slt/installs/archive/v6-base-v6.2.0-282/SimplicityS
 Move the file into the `/home/developer/.local/share/applications` directory.
 
 > [!Note]
-> If you use *Caja*, the standard file manager, request to display hidden files: **View / Show Hidden Files**. You can also set the related preference: **Edit / Preferences / Views / Show hidden files**.
+> If you use *Caja*, the standard file manager, request to display hidden files: **View > Show Hidden Files**. You can also set the related preference: **Edit > Preferences > Views > Show hidden files**.
 
 ## Installation of Visual Studio Code
 
@@ -63,21 +63,36 @@ Start VS Code (from Mint menu). Do not sign in and close the *Build with AI Agen
 
 Install the Simplicity Studio VS Code Extension, according to [these instructions](https://docs.silabs.com/ss-vscode/latest/ss-vscode-getting-started-overview/#install-the-simplicity-studio-vs-code-extension).
 
-
-
 # EFR32xG24 Dev Kit connection
 
+Install the SEGGER J-Link package:
+1. Download it from [SEGGER website](https://www.segger.com/downloads/jlink/) - select the Linux 64-bit DEB Installer.
+2. Install the package (double click on it from the window manager).
+
+Connect the board to the VM:
 1. Connect the board to a USB port of the computer.
 2. Check that the virtual machine can see it, with **Devices > USB** (in the VirtualBox window menu). A new USB device should be visible: **Silicon Labs J-Link OB**. Tick the associated checkbox.
 3. You can assign the board to the virtual machine on a permanent basis with **Devices > USB > USB Settings...**.
 
-The board should appear in the *Debug Adapters* view of Simplicity Studio:
+Start Simplicity Studio (main menu: **Programming > Simplicity Studio**). The board should be present in the device list:
 
-![](images/debug_adapter_view.png)
+![](images/connectedBoard.png)
 
-and the blue LED near the USB connector should be on.
+The blue LED near the USB connector should be flashing.
 
 # Sample application
+
+## Project creation
+
+Create a project for building a sample application which makes the red LED blink:
+1. If not yet done, start Simplicity Studio (see above).
+2. If not yet done, connect the dev kit to the VM (see above)
+3. Follow these [instructions](https://docs.silabs.com/ssv6ug/latest/ssv6-create-project/02-create-project-from-a-connected-device), until the **Example projects & demos** page is displayed.
+4. In the **Filter on keywords** field, enter `blink` and press the Enter key. 10 items should be displayed in the demos and examples region.
+5. Click the **CREATE** button of the **Platform - Blink Bare-metal** example.
+6. In the **Project Configuration** window, keep the default values, and click the **FINISH** button.
+
+
 
 1. Click **File > New > Silicon Labs Project Wizard...**.
 2. In the wizard window, type `Dev Kit` in the **Target Boards** field and then select the board reference corresponding to the mark printed on the bottom side of the board you have. Mine is marked `BRD2601B Rev A01`. Consequently, I select **EFR32xG24 DevKit Board (BRD2601B Rev A01)**.
