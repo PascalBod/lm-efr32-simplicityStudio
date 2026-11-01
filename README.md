@@ -4,8 +4,8 @@ This short tutorial describes a way to make a virtual machine (VM) configured fo
 
 Versions are:
 * Linux Mint 22.3 MATE
-* Simplicity Studio 6.1
-* Simplicity SDK Suite v2026.6.0
+==> * Simplicity Studio 6.1
+==> * Simplicity SDK Suite v2026.6.0
 
 # Prerequisites
 
@@ -28,12 +28,12 @@ The first step is to create the Linux VM. For this, adhere to [this guide](https
 
 ## Installation of Simplicity Studio
 
-Install the Linux Simplicity Studio Installer in the VM according to [these instructions](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#linux-installation). At the time of writing, the Installer version is v1.2.0.
+Install the Linux Simplicity Studio Installer in the VM according to [these instructions](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#linux-installation). At the time of writing, the Installer version is v1.2.2.
 
 > [!Note]
 > The Installer can be downloaded from the [*GETTING STARTED* tab](https://www.silabs.com/software-and-tools/simplicity-studio?tab=getting-started).
 
-Then, continue by adhering to [Simplicity Studio Installation Steps Common to All Operating Systems](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#simplicity-studio-installation-steps-common-to-all-operating-systems), selecting the *Technology Install* track. Add **AI / ML** to the list of 7 preselected elements.
+Then, continue by adhering to [Simplicity Studio Installation Steps Common to All Operating Systems](https://docs.silabs.com/ssv6ug/latest/install-ssv6/install-simplicity-studio#simplicity-studio-installation-steps-common-to-all-operating-systems), selecting the *Technology Install* track. Check the **Select All** option.
 
 The installation creates a desktop shortcut, named `Simplicity Studio.desktop`. 
 
